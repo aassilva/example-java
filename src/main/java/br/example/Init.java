@@ -21,7 +21,8 @@ public class Init {
     private static List<Data> dataList = new ArrayList<Data>();
     private static List<String> paths = new ArrayList<String>();
     private static final String SEPARATOR = "ç";
-    private static  final String BASE = "%HOMEPATH%/data/in/";
+    private static String home = System.getenv().get("HOMEPATH");
+    private static  final String BASE = "C:" + home + "\\data\\in\\";
     private static final String ARCHIVE = "report";
 
     public static void main(String[] args) throws IOException {
@@ -53,7 +54,7 @@ public class Init {
 
         try {
             String out = process(processing);
-            String path = BASE.replaceAll("/in/","/out/");
+            String path = BASE.replaceAll("\\in\\","\\out\\");
             path = path + ARCHIVE + ".done.dat";
             output.persistsData(path, out);
         } catch (Exception ex) {
