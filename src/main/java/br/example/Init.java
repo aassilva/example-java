@@ -8,6 +8,7 @@ package main.java.br.example;
 
 import main.java.br.example.data_structure.Data;
 import main.java.br.example.processing.Processing;
+import main.java.br.example.utilities.Convert;
 import main.java.br.example.utilities.Input;
 import main.java.br.example.utilities.Output;
 
@@ -26,6 +27,7 @@ public class Init {
     public static void main(String[] args) throws IOException {
 
         Input input = new Input();
+        Convert convert = new Convert();
         Processing processing = new Processing();
         Output output = new Output();
 
@@ -41,7 +43,7 @@ public class Init {
                 List<String> readerArchive = input.recoverArchives(path);
 
                 for (String line : readerArchive) {
-                    Data data = input.convertToObject(line);
+                    Data data = convert.convertToObject(line, dataList);
                     dataList.add(data);
                 }
             }  catch (Exception ex) {

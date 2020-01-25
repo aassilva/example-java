@@ -62,7 +62,7 @@ public class Processing {
         for (Data data : dataList) {
             if (data.typeData() == 3) {
                 if (((Sales) data).totalSales() < priceSale) {
-                    salesMan = ((Sales) data).getSalesManName();
+                    salesMan = ((Sales) data).getSalesMan().getName();
                     priceSale = ((Sales) data).totalSales();
                 }
             }

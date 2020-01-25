@@ -14,7 +14,7 @@ public class Sales implements Data {
     private final int TYPE_DATA = 003;
     private int salesId;
     private List<Item> itens = new ArrayList<Item>();
-    private String salesManName;
+    private SalesMan salesMan;
 
     @Override
     public int typeData() {
@@ -37,12 +37,12 @@ public class Sales implements Data {
         this.itens = itens;
     }
 
-    public String getSalesManName() {
-        return salesManName;
+    public SalesMan getSalesMan() {
+        return salesMan;
     }
 
-    public void setSalesManName(String salesManName) {
-        this.salesManName = salesManName;
+    public void setSalesManName(SalesMan salesMan) {
+        this.salesMan = salesMan;
     }
 
     public double totalSales() {
