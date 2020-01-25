@@ -47,9 +47,6 @@ public class Convert {
                 ((Sales) object).setItens(itens);
                 SalesMan salesMan = new SalesMan();
                 salesMan = searchSalesMan(listDates[3], dataList);
-                if (salesMan == null) {
-                    salesMan.setName(listDates[3]);
-                }
                 ((Sales) object).setSalesManName(salesMan);
                 break;
         }
